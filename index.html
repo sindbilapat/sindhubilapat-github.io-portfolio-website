@@ -5,25 +5,74 @@
 
   <meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <title>Sindhu Bilapati | Biomedical Engineering Portfolio</title>
+  <title>
+    Sindhu Bilapati | Biomedical Engineering Portfolio
+  </title>
 
   <meta
     name="description"
     content="Biomedical engineering portfolio of Sindhu Bilapati."
   >
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
   <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
   >
 
-  <link rel="stylesheet" href="css/style.css">
+  <link
+    rel="stylesheet"
+    href="css/style.css"
+  >
+
+  <style>
+
+    /* =========================
+       LEADERSHIP GRID
+    ========================= */
+
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .leadership-item {
+      min-width: 0;
+    }
+
+    @media (max-width: 950px) {
+
+      .leadership-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+    }
+
+    @media (max-width: 600px) {
+
+      .leadership-grid {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+  </style>
 
 </head>
 
@@ -39,7 +88,10 @@
 
   <div class="nav-inner">
 
-    <a href="#top" class="nav-logo">
+    <a
+      href="#top"
+      class="nav-logo"
+    >
       Sindhu Bilapati
     </a>
 
@@ -47,23 +99,21 @@
     <ul class="nav-links">
 
       <li>
-        <a href="#about">About</a>
+        <a href="#projects">
+          Projects
+        </a>
       </li>
 
       <li>
-        <a href="#projects">Projects</a>
+        <a href="#leadership">
+          Leadership
+        </a>
       </li>
 
       <li>
-        <a href="#skills">Skills</a>
-      </li>
-
-      <li>
-        <a href="#leadership">Leadership</a>
-      </li>
-
-      <li>
-        <a href="#contact">Contact</a>
+        <a href="#contact">
+          Contact
+        </a>
       </li>
 
     </ul>
@@ -73,11 +123,9 @@
       class="nav-toggle"
       aria-label="Toggle menu"
     >
-
       <span></span>
       <span></span>
       <span></span>
-
     </button>
 
   </div>
@@ -106,12 +154,12 @@
 
 
       <h1>
-        Hi, I&rsquo;m Sindhu
+        My name is Sindhu
       </h1>
 
 
       <p class="role">
-        I&rsquo;m a dedicated biomedical engineering student who loves finding new ways to use engineering to make a difference in medicine.
+        Dedicated biomedical engineering student who enjoys finding new ways to use engineering to make a difference in medicine.
       </p>
 
 
@@ -121,7 +169,7 @@
           href="#projects"
           class="btn btn-primary"
         >
-          View my projects
+          View Projects
         </a>
 
 
@@ -129,7 +177,7 @@
           href="#contact"
           class="btn btn-outline"
         >
-          Get in touch
+          Contact
         </a>
 
       </div>
@@ -138,15 +186,10 @@
       <div class="hero-meta">
 
         <span>
-          &#128231; bilapatisindhu@gmail.com
-        </span>
-
-        <span>
-          &#128241; 425-504-2299
-        </span>
-
-        <span>
-          &#127891; Florida State University &middot; Expected Graduation: May 2027
+          &#127891;
+          Florida State University
+          &middot;
+          Expected Graduation: May 2027
         </span>
 
       </div>
@@ -163,97 +206,10 @@
 
     </div>
 
+
   </div>
 
 </header>
-
-
-
-<!-- =========================
-     ABOUT
-========================= -->
-
-<section
-  class="about"
-  id="about"
->
-
-  <div class="wrap">
-
-
-    <div class="reveal">
-
-      <p class="eyebrow">
-        Portfolio Overview
-      </p>
-
-      <h2>
-        What I work with
-      </h2>
-
-    </div>
-
-
-    <div class="focus-grid reveal">
-
-
-      <div class="focus-card">
-
-        <div class="focus-title">
-          Medical Device Prototyping
-        </div>
-
-        <p>
-          SolidWorks design and iterative development based on testing and user feedback.
-        </p>
-
-      </div>
-
-
-      <div class="focus-card">
-
-        <div class="focus-title">
-          Medical Imaging &amp; Anatomical Modeling
-        </div>
-
-        <p>
-          CT segmentation and 3D anatomical modeling using Materialise Mimics and 3D Slicer.
-        </p>
-
-      </div>
-
-
-      <div class="focus-card">
-
-        <div class="focus-title">
-          Additive Manufacturing
-        </div>
-
-        <p>
-          SLA and FDM fabrication with experience in print preparation, post-processing, and process evaluation.
-        </p>
-
-      </div>
-
-
-      <div class="focus-card">
-
-        <div class="focus-title">
-          Computational Modeling
-        </div>
-
-        <p>
-          MATLAB and Python modeling applied to biomedical transport and blood-flow problems.
-        </p>
-
-      </div>
-
-
-    </div>
-
-  </div>
-
-</section>
 
 
 
@@ -355,7 +311,6 @@
 
         </div>
 
-
         <div class="card-body">
 
           <div class="card-meta">
@@ -370,16 +325,13 @@
 
           </div>
 
-
           <h3>
             Brachytherapy CT Simulation Device
           </h3>
 
-
           <p>
             A single-use, 3D-printed vaginal cylinder for CT simulation, matching the geometry of the reusable treatment device.
           </p>
-
 
           <span class="card-link">
             View project &rarr;
@@ -403,11 +355,10 @@
 
           <img
             src="assets/images/p2-holding.jpg"
-            alt="Sindhu holding a 3D-printed part from the Formlabs Form 4B printer"
+            alt="3D-printed part produced with a Formlabs Form 4B printer"
           >
 
         </div>
-
 
         <div class="card-body">
 
@@ -423,16 +374,13 @@
 
           </div>
 
-
           <h3>
             SLA Fleet Upgrade Onboarding and Validation
           </h3>
 
-
           <p>
-            Comparing the Form 4B/4BL against the existing Form 3B/3BL fleet for the Anatomic Modeling Unit.
+            Comparison of the Form 4B/4BL with the existing Form 3B/3BL fleet for the Anatomic Modeling Unit.
           </p>
-
 
           <span class="card-link">
             View project &rarr;
@@ -461,7 +409,6 @@
 
         </div>
 
-
         <div class="card-body">
 
           <div class="card-meta">
@@ -476,16 +423,13 @@
 
           </div>
 
-
           <h3>
             Adaptive Bike Handle Attachment
           </h3>
 
-
           <p>
-            A custom bike handle attachment with an adjustable, ball-and-socket wrist joint for a child with a below-elbow limb difference.
+            A custom bike handle attachment with an adjustable ball-and-socket wrist joint for a child with a below-elbow limb difference.
           </p>
-
 
           <span class="card-link">
             View project &rarr;
@@ -514,7 +458,6 @@
 
         </div>
 
-
         <div class="card-body">
 
           <div class="card-meta">
@@ -524,21 +467,18 @@
             </span>
 
             <span class="org">
-              Undergrad Research
+              Undergraduate Research
             </span>
 
           </div>
-
 
           <h3>
             Blood Coagulation Modeling with Capillary Strips
           </h3>
 
-
           <p>
-            An ongoing study testing whether blood penetration distance on a capillary strip tracks coagulation status.
+            An ongoing study examining whether blood penetration distance on a capillary strip tracks coagulation status.
           </p>
-
 
           <span class="card-link">
             View project &rarr;
@@ -567,7 +507,6 @@
 
         </div>
 
-
         <div class="card-body">
 
           <div class="card-meta">
@@ -582,16 +521,13 @@
 
           </div>
 
-
           <h3>
             Arterial and Venous Segmentation Refinement
           </h3>
 
-
           <p>
-            Refining arterial and venous segmentations from a CT scan for a CABG vessel-harvesting simulator.
+            Refinement of arterial and venous CT segmentations for a CABG vessel-harvesting simulator.
           </p>
-
 
           <span class="card-link">
             View project &rarr;
@@ -620,7 +556,6 @@
 
         </div>
 
-
         <div class="card-body">
 
           <div class="card-meta">
@@ -635,16 +570,13 @@
 
           </div>
 
-
           <h3>
             Pacemaker Bioinstrumentation System
           </h3>
 
-
           <p>
-            A QRS-detection circuit built for a bioinstrumentation class, from ECG amplifier to pacing output.
+            A QRS-detection circuit developed for a bioinstrumentation course, from ECG amplification to pacing output.
           </p>
-
 
           <span class="card-link">
             View project &rarr;
@@ -661,7 +593,7 @@
       <div
         class="card reveal"
         data-project="p7"
-        data-category="research"
+        data-category="coursework"
       >
 
         <div class="card-img">
@@ -672,7 +604,6 @@
           >
 
         </div>
-
 
         <div class="card-body">
 
@@ -688,16 +619,13 @@
 
           </div>
 
-
           <h3>
             Transport of Amyloid-&beta; Aggregates Through Brain Interstitial Fluid
           </h3>
 
-
           <p>
-            A MATLAB model of amyloid-beta transport, comparing diffusion and bulk flow. Presented as a poster at AAIC 2026.
+            A MATLAB model of amyloid-beta transport comparing diffusion and bulk flow. Presented as a poster at AAIC 2026.
           </p>
-
 
           <span class="card-link">
             View project &rarr;
@@ -721,11 +649,10 @@
 
           <img
             src="assets/images/p8-poster.jpg"
-            alt="Sindhu presenting her spiral arteries research poster"
+            alt="Spiral artery research poster presentation"
           >
 
         </div>
-
 
         <div class="card-body">
 
@@ -736,21 +663,18 @@
             </span>
 
             <span class="org">
-              Undergrad Research
+              Undergraduate Research
             </span>
 
           </div>
-
 
           <h3>
             Spiral Arteries Orchestrating Menstrual Flow
           </h3>
 
-
           <p>
-            A parameterized model of spiral artery geometry and its effect on uterine blood flow resistance.
+            A parameterized model examining the relationship between spiral artery geometry and uterine blood-flow resistance.
           </p>
-
 
           <span class="card-link">
             View project &rarr;
@@ -779,7 +703,6 @@
 
         </div>
 
-
         <div class="card-body">
 
           <div class="card-meta">
@@ -794,16 +717,13 @@
 
           </div>
 
-
           <h3>
             Hand Placement and Joint Loading During a Static High Plank
           </h3>
 
-
           <p>
-            Motion-capture study of how hand placement changes shoulder and elbow loading during a plank.
+            Motion-capture analysis of how hand placement affects shoulder and elbow loading during a static high plank.
           </p>
-
 
           <span class="card-link">
             View project &rarr;
@@ -832,7 +752,6 @@
 
         </div>
 
-
         <div class="card-body">
 
           <div class="card-meta">
@@ -847,110 +766,19 @@
 
           </div>
 
-
           <h3>
             Knee Ligament Teaching Model
           </h3>
 
-
           <p>
-            A segmented, educational 3D knee model built to show the ACL and PCL crossing positions.
+            A segmented educational 3D knee model developed to demonstrate ACL and PCL positioning.
           </p>
-
 
           <span class="card-link">
             View project &rarr;
           </span>
 
         </div>
-
-      </div>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================
-     SKILLS
-========================= -->
-
-<section
-  class="skills"
-  id="skills"
->
-
-  <div class="wrap">
-
-
-    <div class="section-head reveal">
-
-      <p class="eyebrow">
-        Capabilities
-      </p>
-
-      <h2>
-        Skills
-      </h2>
-
-    </div>
-
-
-    <div class="skills-grid">
-
-
-      <div class="skill-item reveal">
-
-        <h4>
-          Additive Manufacturing Technology
-        </h4>
-
-        <p>
-          Material Jetting (Stratasys J850) | Vat Photopolymerization (Formlabs Form 3, 3B, 4B, and 4BL) | Material Extrusion (Bambu Lab, Prusa CORE One, Ultimaker S5, MakerBot Method X)
-        </p>
-
-      </div>
-
-
-      <div class="skill-item reveal">
-
-        <h4>
-          Laboratory + Technical Skills
-        </h4>
-
-        <p>
-          Medical Image Segmentation, Print Preparation and Post-Processing, Dry-Film Photolithography, AutoCAD Mask Design, Laser Cutting, Chip Assembly, Microfluidic Testing Rigs, CAD-Based Flow Simulation
-        </p>
-
-      </div>
-
-
-      <div class="skill-item reveal">
-
-        <h4>
-          Design &amp; Analysis Software
-        </h4>
-
-        <p>
-          SolidWorks, MATLAB, Python, C++, Materialise Mimics Innovation Suite, Microsoft Office, Adobe Creative Suite
-        </p>
-
-      </div>
-
-
-      <div class="skill-item reveal">
-
-        <h4>
-          Languages
-        </h4>
-
-        <p>
-          Telugu (Native), Hindi (Spoken and Written), English (Fluent)
-        </p>
 
       </div>
 
@@ -974,12 +802,7 @@
 
   <div class="wrap">
 
-
     <div class="section-head reveal">
-
-      <p class="eyebrow">
-        Outside the Lab
-      </p>
 
       <h2>
         Leadership
@@ -998,7 +821,7 @@
         </h4>
 
         <p>
-          NASA L&rsquo;SPACE Mission Concept Academy is a semester-long program where students work in teams to develop a mission concept using NASA-style project planning and engineering processes.
+          Project manager for a multidisciplinary team developing a mission concept through NASA-style project planning and engineering processes.
         </p>
 
       </div>
@@ -1011,7 +834,7 @@
         </h4>
 
         <p>
-          I lead assistive-device projects like the bike handle attachment and coordinate work across student teams.
+          Coordinates assistive-device projects and supports student teams through design, prototyping, and project development.
         </p>
 
       </div>
@@ -1024,7 +847,7 @@
         </h4>
 
         <p>
-          I manage team operations and coordinate competition preparation for FSU&rsquo;s Nandana dance team.
+          Founded and managed FSU&rsquo;s Nandana dance team, coordinating team operations and competition preparation.
         </p>
 
       </div>
@@ -1037,7 +860,7 @@
         </h4>
 
         <p>
-          I teach IDS1921 and mentor first-year engineering students during their transition to university.
+          Leads IDS1921 sessions and mentors first-year engineering students during their transition to university.
         </p>
 
       </div>
@@ -1062,19 +885,14 @@
 
   <div class="wrap">
 
-
     <div class="reveal">
 
-      <p class="eyebrow">
-        Let&rsquo;s Connect
-      </p>
-
       <h2>
-        What I&rsquo;m looking for
+        Contact
       </h2>
 
       <p>
-        I want to stay close to the medical side of engineering, especially work where I can understand who the design is for and what problem it is meant to solve.
+        Interested in biomedical engineering roles that involve developing and improving technologies for medical applications.
       </p>
 
     </div>
@@ -1174,6 +992,7 @@
     <button
       class="modal-close"
       id="modal-close"
+      aria-label="Close project"
     >
       &times;
     </button>
@@ -1207,7 +1026,6 @@
         >
           &#8250;
         </button>
-
 
       </div>
 
@@ -1260,7 +1078,7 @@
         <div>
 
           <h4>
-            My Work
+            Contribution
           </h4>
 
           <p
@@ -1291,7 +1109,6 @@
         <h4>
           Tools
         </h4>
-
 
         <div
           class="tool-pill-row"
