@@ -4,21 +4,30 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // Mobile nav toggle
+
+  // ---------------------------------------------------------------
+  // Mobile navigation
+  // ---------------------------------------------------------------
+
   const navToggle = document.querySelector('.nav-toggle');
   const navLinks = document.querySelector('.nav-links');
 
   if (navToggle && navLinks) {
-    navToggle.addEventListener('click', () =>
-      navLinks.classList.toggle('open')
-    );
 
-    navLinks.querySelectorAll('a').forEach(a =>
-      a.addEventListener('click', () =>
-        navLinks.classList.remove('open')
-      )
-    );
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+      });
+
+    });
+
   }
+
 
 
   // ---------------------------------------------------------------
@@ -29,33 +38,48 @@ document.addEventListener('DOMContentLoaded', () => {
     '(prefers-reduced-motion: reduce)'
   ).matches;
 
+
   if (!prefersReducedMotion) {
 
-    const revealEls = document.querySelectorAll('.reveal');
+    const revealEls =
+      document.querySelectorAll('.reveal');
 
-    const io = new IntersectionObserver((entries) => {
 
-      entries.forEach(entry => {
+    const io =
+      new IntersectionObserver(
+        entries => {
 
-        if (entry.isIntersecting) {
-          entry.target.classList.remove('pending');
-          io.unobserve(entry.target);
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.remove('pending');
+
+              io.unobserve(entry.target);
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.12
         }
-
-      });
-
-    }, {
-      threshold: 0.12
-    });
+      );
 
 
     revealEls.forEach(el => {
 
-      const rect = el.getBoundingClientRect();
+      const rect =
+        el.getBoundingClientRect();
+
 
       if (rect.top > window.innerHeight * 0.9) {
+
         el.classList.add('pending');
+
         io.observe(el);
+
       }
 
     });
@@ -63,10 +87,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
+
   // ---------------------------------------------------------------
   // Project data
-  //
-  // All project images use "contain" so the full image remains visible.
   // ---------------------------------------------------------------
 
   const projects = {
@@ -74,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // =============================================================
     // PROJECT 1
+    // Brachytherapy
     // =============================================================
 
     p1: {
@@ -108,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Mayo Clinic's Anatomic Modeling Unit needed a single-use, 3D-printed vaginal cylinder that reproduces the geometry of the reusable brachytherapy treatment device for use during CT simulation.",
 
       work:
-        'I rebuilt and refined the cylinder design in SolidWorks and created four sizes based on feedback from the clinical team. I also created technical drawings and completed dimensional checks before fabrication.',
+        'Rebuilt and refined the cylinder design in SolidWorks and created four sizes based on feedback from the clinical team. Created technical drawings and completed dimensional checks before fabrication.',
 
       outcome:
         'The technical drawings were approved, and the design moved into fabrication and in-person evaluation with the clinical team.',
@@ -124,8 +148,10 @@ document.addEventListener('DOMContentLoaded', () => {
     },
 
 
+
     // =============================================================
     // PROJECT 2
+    // SLA Fleet Upgrade
     // =============================================================
 
     p2: {
@@ -160,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'Evaluate whether the Form 4B and Form 4BL could improve production in the Anatomic Modeling Unit compared with the existing Form 3B/3BL fleet.',
 
       work:
-        'I compared the Form 4B/4BL with the Form 3B/3BL using similar builds, tracking print time and print outcomes. I summarized the results and presented them to AMU leadership with a proposed onboarding plan.',
+        'Compared the Form 4B/4BL with the Form 3B/3BL using similar builds, tracking print time and print outcomes. Summarized the results and presented them to AMU leadership with a proposed onboarding plan.',
 
       outcome:
         'For an equivalent build, estimated print time dropped from over 24 hours on the Form 3B to about 7 hours on the Form 4B. AMU production data also showed roughly 2.5x higher throughput on the Form 4B than the average Form 3B. The results were presented to AMU leadership and supported the decision to onboard the Form 4 platform for production.',
@@ -176,8 +202,10 @@ document.addEventListener('DOMContentLoaded', () => {
     },
 
 
+
     // =============================================================
     // PROJECT 3
+    // Adaptive Bike Handle
     // =============================================================
 
     p3: {
@@ -197,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
           src: 'assets/images/p3-device.jpg',
           fit: 'contain',
-          caption: 'Completed attachment, with the adjustable length and wrist socket marked'
+          caption: 'Completed attachment with adjustable length and wrist socket'
         }
 
       ],
@@ -206,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'A child with a below-elbow limb difference needed a custom bike handle attachment that could connect securely to the handlebar, allow comfortable wrist movement, and adjust as the child grows.',
 
       work:
-        'I led the SolidWorks design and prototyping. Based on feedback from the child and family, I added a ball-and-socket wrist joint, a screw-based length adjustment, and revised the handlebar connection before preparing the parts for fabrication.',
+        'Led the SolidWorks design and prototyping. Based on feedback from the child and family, added a ball-and-socket wrist joint, a screw-based length adjustment, and revised the handlebar connection before preparing the parts for fabrication.',
 
       outcome:
         'The completed device was delivered, and the child rode their bike for the first time using the attachment.',
@@ -222,8 +250,10 @@ document.addEventListener('DOMContentLoaded', () => {
     },
 
 
+
     // =============================================================
     // PROJECT 4
+    // Blood Coagulation
     // =============================================================
 
     p4: {
@@ -258,7 +288,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'Test whether blood penetration distance on a capillary strip could reflect changes in coagulation status after heparin treatment and protamine reversal.',
 
       work:
-        'I developed the capillary-strip testing setup and worked on making the protocol more consistent by standardizing sample volume and timing. I measured penetration distance over time and organized the measurements for comparison across conditions.',
+        'Developed the capillary-strip testing setup and improved protocol consistency by standardizing sample volume and timing. Measured penetration distance over time and organized the measurements for comparison across conditions.',
 
       outcome:
         'The project produced preliminary measurements, but there was not enough evidence to conclude that penetration distance consistently tracked coagulation status.',
@@ -274,8 +304,10 @@ document.addEventListener('DOMContentLoaded', () => {
     },
 
 
+
     // =============================================================
     // PROJECT 5
+    // Arterial + Venous Segmentation
     // =============================================================
 
     p5: {
@@ -285,24 +317,26 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Arterial and Venous Segmentation Refinement',
 
       images: [
-  {
-    src: 'assets/images/p5-segmentation.png',
-    fit: 'contain',
-    caption: 'Segmented arterial (red) and venous (blue) anatomy'
-  },
 
-  {
-    src: 'assets/images/p5-print.jpg',
-    fit: 'contain',
-    caption: 'Upper-extremity model printed on the Stratasys J850'
-  }
-],
+        {
+          src: 'assets/images/p5-segmentation.png',
+          fit: 'contain',
+          caption: 'Segmented arterial (red) and venous (blue) anatomy'
+        },
+
+        {
+          src: 'assets/images/p5-print.jpg',
+          fit: 'contain',
+          caption: 'Upper-extremity model printed on the Stratasys J850'
+        }
+
+      ],
 
       objective:
         'Support development of a proof-of-concept simulator for vein and radial artery harvesting in coronary artery bypass grafting using an upper-extremity CT scan.',
 
       work:
-        'I reviewed and cleaned up the existing arterial segmentation in Materialise Mimics. I then created a separate venous segmentation and compared thresholding and region-growing methods to isolate connected vessel anatomy.',
+        'Reviewed and cleaned up the existing arterial segmentation in Materialise Mimics. Created a separate venous segmentation and compared thresholding and region-growing methods to isolate connected vessel anatomy.',
 
       outcome:
         'The arterial and venous segmentations were incorporated into a physical upper-extremity model printed on the Stratasys J850 for continued development of the CABG simulation concept.',
@@ -319,8 +353,10 @@ document.addEventListener('DOMContentLoaded', () => {
     },
 
 
+
     // =============================================================
     // PROJECT 6
+    // Pacemaker
     // =============================================================
 
     p6: {
@@ -331,16 +367,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
       images: [
 
-        {
-          src: 'assets/images/p6-diagram.png',
-          fit: 'contain',
-          caption: 'Block diagram of the detection and pacing circuit'
-        },
+        /*
+          IMPORTANT:
+          Main project card uses p6-breadboard.jpg,
+          so the popup opens with the same image.
+        */
 
         {
           src: 'assets/images/p6-breadboard.jpg',
           fit: 'contain',
           caption: 'Breadboard build of the full circuit'
+        },
+
+        {
+          src: 'assets/images/p6-diagram.png',
+          fit: 'contain',
+          caption: 'Block diagram of the detection and pacing circuit'
         },
 
         {
@@ -355,7 +397,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Build a circuit that detects the QRS signal from an ECG and triggers a timed pacing pulse when a heartbeat isn't detected. This was a bioinstrumentation class project, not a clinically functional device.",
 
       work:
-        'I rebuilt the ECG amplifier and QRS band-pass filter and tested the filter response before adding the remaining stages. I set the detection threshold with an LM311 comparator, built the monostable and astable 555 timer stages, and integrated the NAND gate and 4-bit counter. I tested and debugged each stage before testing the complete system.',
+        'Rebuilt the ECG amplifier and QRS band-pass filter and tested the filter response before adding the remaining stages. Set the detection threshold with an LM311 comparator, built the monostable and astable 555 timer stages, and integrated the NAND gate and 4-bit counter. Tested and debugged each stage before testing the complete system.',
 
       outcome:
         'The completed circuit responded differently depending on whether the simulated heartbeat was present. The QRS signal reset the counter and blocked the pacing output; when the heartbeat was removed, the counter reached its limit and produced the intended output at the LED.',
@@ -372,8 +414,10 @@ document.addEventListener('DOMContentLoaded', () => {
     },
 
 
+
     // =============================================================
     // PROJECT 7
+    // Amyloid Beta
     // =============================================================
 
     p7: {
@@ -408,7 +452,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'Model how amyloid-beta aggregate size affects the balance between diffusion and bulk fluid flow during transport through brain interstitial fluid.',
 
       work:
-        "I built the transport model using Fick's first law and calculated diffusion coefficients with the Stokes–Einstein equation. I used the Péclet number to compare diffusive and convective transport and generated MATLAB plots showing how aggregate size affects diffusion.",
+        "Built the transport model using Fick's first law and calculated diffusion coefficients with the Stokes–Einstein equation. Used the Péclet number to compare diffusive and convective transport and generated MATLAB plots showing how aggregate size affects diffusion.",
 
       outcome:
         'The model showed that diffusion was more effective for smaller amyloid-beta species, while larger aggregates depended more on bulk flow for transport. The work was accepted as a virtual poster at AAIC 2026.',
@@ -423,8 +467,10 @@ document.addEventListener('DOMContentLoaded', () => {
     },
 
 
+
     // =============================================================
     // PROJECT 8
+    // Spiral Arteries
     // =============================================================
 
     p8: {
@@ -434,6 +480,17 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Spiral Arteries Orchestrating Menstrual Flow',
 
       images: [
+
+        /*
+          Main card uses p8-poster.jpg,
+          so the popup starts with the poster too.
+        */
+
+        {
+          src: 'assets/images/p8-poster.jpg',
+          fit: 'contain',
+          caption: 'Presenting the research at the Florida Undergraduate Research Conference'
+        },
 
         {
           src: 'assets/images/p8-schematic.png',
@@ -451,12 +508,6 @@ document.addEventListener('DOMContentLoaded', () => {
           src: 'assets/images/p8-channel.png',
           fit: 'contain',
           caption: 'CAD concept for a microfluidic test channel'
-        },
-
-        {
-          src: 'assets/images/p8-poster.jpg',
-          fit: 'contain',
-          caption: 'Presenting the research at the Florida Undergraduate Research Conference'
         }
 
       ],
@@ -465,10 +516,10 @@ document.addEventListener('DOMContentLoaded', () => {
         'Model how spiral artery geometry affects menstrual blood flow and test whether uterine contraction and vasoconstriction alone could reduce flow enough to control bleeding.',
 
       work:
-        'I built a parameterized 2D spiral artery model and varied vessel diameter, coil pitch, and artery length. I used the Hagen–Poiseuille and Darcy–Weisbach equations to calculate flow resistance, then used Python to compare the results across conditions.',
+        'Built a parameterized 2D spiral artery model and varied vessel diameter, coil pitch, and artery length. Used the Hagen–Poiseuille and Darcy–Weisbach equations to calculate flow resistance, then used Python to compare the results across conditions.',
 
       outcome:
-        'The model suggested that contraction and vasoconstriction alone may not reduce flow enough to control bleeding. I presented the project at the Florida Undergraduate Research Conference.',
+        'The model suggested that contraction and vasoconstriction alone may not reduce flow enough to control bleeding. Presented the project at the Florida Undergraduate Research Conference.',
 
       tools: [
         'Python',
@@ -480,8 +531,10 @@ document.addEventListener('DOMContentLoaded', () => {
     },
 
 
+
     // =============================================================
     // PROJECT 9
+    // High Plank
     // =============================================================
 
     p9: {
@@ -510,7 +563,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'Determine how narrow, standard, and wide hand placement affects shoulder and elbow loading during a static high plank.',
 
       work:
-        'I ran the plank trials and collected motion-capture data with OpenCap. I also helped interpret the OpenSim inverse-dynamics results and ran the statistical comparison across the three hand positions.',
+        'Ran the plank trials and collected motion-capture data with OpenCap. Helped interpret the OpenSim inverse-dynamics results and performed the statistical comparison across the three hand positions.',
 
       outcome:
         'Wider hand placement reduced shoulder flexion loading but increased loading at the right elbow. Most joint moments changed significantly across positions, showing that hand placement redistributed the load rather than reducing it overall.',
@@ -526,8 +579,10 @@ document.addEventListener('DOMContentLoaded', () => {
     },
 
 
+
     // =============================================================
     // PROJECT 10
+    // Knee Model
     // =============================================================
 
     p10: {
@@ -538,16 +593,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
       images: [
 
-        {
-          src: 'assets/images/p10-segmentation.jpg',
-          fit: 'contain',
-          caption: 'Segmenting the femur, tibia, and fibula in 3D Slicer'
-        },
+        /*
+          Main card uses p10-model.png,
+          so popup now begins with the model.
+        */
 
         {
           src: 'assets/images/p10-model.png',
           fit: 'contain',
           caption: 'Completed model with the ACL (blue) and PCL (green) reconstructed'
+        },
+
+        {
+          src: 'assets/images/p10-segmentation.jpg',
+          fit: 'contain',
+          caption: 'Segmenting the femur, tibia, and fibula in 3D Slicer'
         }
 
       ],
@@ -556,10 +616,10 @@ document.addEventListener('DOMContentLoaded', () => {
         'Build an educational knee model that clearly shows how the ACL and PCL cross relative to the femur, tibia, and fibula.',
 
       work:
-        "I segmented the femur, tibia, and fibula from a CT dataset in 3D Slicer. Ligament imaging wasn't available, so I manually reconstructed the ACL and PCL and positioned them to show the crossing anatomy clearly.",
+        "Segmented the femur, tibia, and fibula from a CT dataset in 3D Slicer. Manually reconstructed the ACL and PCL because ligament imaging wasn't available, then positioned them to show the crossing anatomy clearly.",
 
       outcome:
-        'I completed an initial digital model showing the femur, tibia, fibula, ACL, and PCL and uploaded it to Sketchfab for review.',
+        'Completed an initial digital model showing the femur, tibia, fibula, ACL, and PCL and uploaded it to Sketchfab for review.',
 
       tools: [
         '3D Slicer',
@@ -573,169 +633,297 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
 
+
   // ---------------------------------------------------------------
   // Modal + gallery
   // ---------------------------------------------------------------
 
-  const overlay = document.getElementById('modal-overlay');
-  const galleryMain = document.getElementById('gallery-main');
-  const galleryCaption = document.getElementById('gallery-caption');
-  const galleryThumbs = document.getElementById('gallery-thumbs');
-  const galleryPrev = document.getElementById('gallery-prev');
-  const galleryNext = document.getElementById('gallery-next');
+  const overlay =
+    document.getElementById('modal-overlay');
 
-  const modalTag = document.getElementById('modal-tag');
-  const modalTitle = document.getElementById('modal-title');
-  const modalObjective = document.getElementById('modal-objective');
-  const modalWork = document.getElementById('modal-work');
-  const modalOutcome = document.getElementById('modal-outcome');
-  const modalTools = document.getElementById('modal-tools');
+  const galleryMain =
+    document.getElementById('gallery-main');
+
+  const galleryCaption =
+    document.getElementById('gallery-caption');
+
+  const galleryThumbs =
+    document.getElementById('gallery-thumbs');
+
+  const galleryPrev =
+    document.getElementById('gallery-prev');
+
+  const galleryNext =
+    document.getElementById('gallery-next');
+
+
+  const modalTag =
+    document.getElementById('modal-tag');
+
+  const modalTitle =
+    document.getElementById('modal-title');
+
+  const modalObjective =
+    document.getElementById('modal-objective');
+
+  const modalWork =
+    document.getElementById('modal-work');
+
+  const modalOutcome =
+    document.getElementById('modal-outcome');
+
+  const modalTools =
+    document.getElementById('modal-tools');
 
 
   let currentImages = [];
+
   let currentIndex = 0;
+
 
 
   function renderImage() {
 
-    const img = currentImages[currentIndex];
-
-    galleryMain.src = img.src;
-    galleryMain.alt = img.caption || '';
-
-    // Keep every gallery image fully visible.
-    galleryMain.style.objectFit = 'contain';
-    galleryMain.style.objectPosition = 'center';
-
-    galleryMain.classList.add('is-contain');
-
-    galleryCaption.textContent = img.caption || '';
-    galleryCaption.hidden = !img.caption;
+    const img =
+      currentImages[currentIndex];
 
 
-    galleryThumbs.querySelectorAll('.thumb').forEach((t, i) => {
-      t.classList.toggle('active', i === currentIndex);
-    });
+    galleryMain.src =
+      img.src;
+
+    galleryMain.alt =
+      img.caption || '';
 
 
-    const multi = currentImages.length > 1;
+    galleryMain.style.objectFit =
+      'contain';
 
-    galleryPrev.hidden = !multi;
-    galleryNext.hidden = !multi;
-    galleryThumbs.hidden = !multi;
-
-  }
+    galleryMain.style.objectPosition =
+      'center';
 
 
-  function openModal(id) {
-
-    const p = projects[id];
-
-    if (!p) return;
+    galleryMain.classList.add(
+      'is-contain'
+    );
 
 
-    currentImages = p.images;
+    galleryCaption.textContent =
+      img.caption || '';
 
-    currentIndex = 0;
-
-
-    modalTag.textContent = p.tag;
-
-    modalTitle.textContent = p.title;
-
-    modalObjective.textContent = p.objective;
-
-    modalWork.textContent = p.work;
-
-    modalOutcome.textContent = p.outcome;
+    galleryCaption.hidden =
+      !img.caption;
 
 
-    modalTools.innerHTML = '';
+    galleryThumbs
+      .querySelectorAll('.thumb')
+      .forEach((thumb, index) => {
 
-
-    p.tools.forEach(t => {
-
-      const pill = document.createElement('span');
-
-      pill.className = 'tool-pill';
-
-      pill.textContent = t;
-
-      modalTools.appendChild(pill);
-
-    });
-
-
-    galleryThumbs.innerHTML = '';
-
-
-    p.images.forEach((img, i) => {
-
-      const b = document.createElement('button');
-
-      b.className = 'thumb';
-
-      b.type = 'button';
-
-      b.setAttribute(
-        'aria-label',
-        `Show image ${i + 1}`
-      );
-
-
-      const t = document.createElement('img');
-
-      t.src = img.src;
-
-      t.alt = '';
-
-      t.style.objectFit = 'contain';
-
-      t.style.objectPosition = 'center';
-
-
-      b.appendChild(t);
-
-
-      b.addEventListener('click', () => {
-
-        currentIndex = i;
-
-        renderImage();
+        thumb.classList.toggle(
+          'active',
+          index === currentIndex
+        );
 
       });
 
 
-      galleryThumbs.appendChild(b);
+    const multipleImages =
+      currentImages.length > 1;
+
+
+    galleryPrev.hidden =
+      !multipleImages;
+
+    galleryNext.hidden =
+      !multipleImages;
+
+    galleryThumbs.hidden =
+      !multipleImages;
+
+  }
+
+
+
+  function openModal(id) {
+
+    const project =
+      projects[id];
+
+
+    if (!project) {
+      return;
+    }
+
+
+    currentImages =
+      project.images;
+
+
+    /*
+      Always start the gallery on image 0.
+      Image 0 is now intentionally the
+      same image shown on the card.
+    */
+
+    currentIndex = 0;
+
+
+    modalTag.textContent =
+      project.tag;
+
+    modalTitle.textContent =
+      project.title;
+
+    modalObjective.textContent =
+      project.objective;
+
+    modalWork.textContent =
+      project.work;
+
+    modalOutcome.textContent =
+      project.outcome;
+
+
+    modalTools.innerHTML =
+      '';
+
+
+    project.tools.forEach(tool => {
+
+      const pill =
+        document.createElement('span');
+
+
+      pill.className =
+        'tool-pill';
+
+
+      pill.textContent =
+        tool;
+
+
+      modalTools.appendChild(
+        pill
+      );
 
     });
 
 
+
+    galleryThumbs.innerHTML =
+      '';
+
+
+    project.images.forEach(
+      (image, index) => {
+
+
+        const button =
+          document.createElement('button');
+
+
+        button.className =
+          'thumb';
+
+
+        button.type =
+          'button';
+
+
+        button.setAttribute(
+          'aria-label',
+          `Show image ${index + 1}`
+        );
+
+
+        const thumbnail =
+          document.createElement('img');
+
+
+        thumbnail.src =
+          image.src;
+
+
+        thumbnail.alt =
+          '';
+
+
+        thumbnail.style.objectFit =
+          'contain';
+
+
+        thumbnail.style.objectPosition =
+          'center';
+
+
+        button.appendChild(
+          thumbnail
+        );
+
+
+        button.addEventListener(
+          'click',
+          () => {
+
+            currentIndex =
+              index;
+
+
+            renderImage();
+
+          }
+        );
+
+
+        galleryThumbs.appendChild(
+          button
+        );
+
+      }
+    );
+
+
     renderImage();
 
-    overlay.classList.add('open');
 
-    document.body.style.overflow = 'hidden';
+    overlay.classList.add(
+      'open'
+    );
+
+
+    document.body.style.overflow =
+      'hidden';
 
   }
+
 
 
   function closeModal() {
 
-    overlay.classList.remove('open');
+    overlay.classList.remove(
+      'open'
+    );
 
-    document.body.style.overflow = '';
+
+    document.body.style.overflow =
+      '';
 
   }
 
 
+
   function step(delta) {
 
-    if (currentImages.length < 2) return;
+    if (currentImages.length < 2) {
+      return;
+    }
 
 
     currentIndex =
-      (currentIndex + delta + currentImages.length)
+      (
+        currentIndex
+        + delta
+        + currentImages.length
+      )
       % currentImages.length;
 
 
@@ -744,33 +932,59 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
+
+  // ---------------------------------------------------------------
+  // Connect each card to its matching project
+  // ---------------------------------------------------------------
+
   document
-    .querySelectorAll('[data-project]')
+    .querySelectorAll(
+      '.project-grid .card[data-project]'
+    )
     .forEach(card => {
 
-      card.addEventListener('click', () => {
 
-        openModal(
-          card.getAttribute('data-project')
-        );
+      card.addEventListener(
+        'click',
+        () => {
 
-      });
+
+          const projectId =
+            card.dataset.project;
+
+
+          openModal(
+            projectId
+          );
+
+        }
+      );
+
 
     });
 
 
+
   document
     .getElementById('modal-close')
-    .addEventListener('click', closeModal);
+    .addEventListener(
+      'click',
+      closeModal
+    );
 
 
-  overlay.addEventListener('click', e => {
 
-    if (e.target === overlay) {
-      closeModal();
+  overlay.addEventListener(
+    'click',
+    event => {
+
+      if (event.target === overlay) {
+        closeModal();
+      }
+
     }
+  );
 
-  });
 
 
   galleryPrev.addEventListener(
@@ -785,75 +999,115 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
 
-  document.addEventListener('keydown', e => {
 
-    if (!overlay.classList.contains('open')) {
-      return;
+  document.addEventListener(
+    'keydown',
+    event => {
+
+
+      if (
+        !overlay.classList.contains('open')
+      ) {
+        return;
+      }
+
+
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+
+
+      if (event.key === 'ArrowLeft') {
+        step(-1);
+      }
+
+
+      if (event.key === 'ArrowRight') {
+        step(1);
+      }
+
+
     }
+  );
 
-
-    if (e.key === 'Escape') {
-      closeModal();
-    }
-
-
-    if (e.key === 'ArrowLeft') {
-      step(-1);
-    }
-
-
-    if (e.key === 'ArrowRight') {
-      step(1);
-    }
-
-  });
 
 
   // ---------------------------------------------------------------
-  // Filter bar
+  // Project filtering
   // ---------------------------------------------------------------
 
   const filterBtns =
-    document.querySelectorAll('.filter-btn');
+    document.querySelectorAll(
+      '.filter-btn'
+    );
+
 
   const cards =
-    document.querySelectorAll('.project-grid .card');
+    document.querySelectorAll(
+      '.project-grid .card'
+    );
 
 
-  filterBtns.forEach(btn => {
 
-    btn.addEventListener('click', () => {
-
-      filterBtns.forEach(b =>
-        b.classList.remove('active')
-      );
+  filterBtns.forEach(button => {
 
 
-      btn.classList.add('active');
+    button.addEventListener(
+      'click',
+      () => {
 
 
-      const filter =
-        btn.getAttribute('data-filter');
+        filterBtns.forEach(btn => {
+
+          btn.classList.remove(
+            'active'
+          );
+
+        });
 
 
-      cards.forEach(card => {
+        button.classList.add(
+          'active'
+        );
 
-        const cat =
-          card.getAttribute('data-category');
+
+        const filter =
+          button.dataset.filter;
 
 
-        card.style.display =
-          (
+        cards.forEach(card => {
+
+
+          const category =
+            card.dataset.category;
+
+
+          if (
             filter === 'all'
-            || cat === filter
-          )
-            ? ''
-            : 'none';
+            || category === filter
+          ) {
 
-      });
+            card.style.display =
+              '';
 
-    });
+          }
+
+          else {
+
+            card.style.display =
+              'none';
+
+          }
+
+
+        });
+
+
+      }
+    );
+
 
   });
+
 
 });
