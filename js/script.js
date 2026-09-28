@@ -4,7 +4,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-
   // ---------------------------------------------------------------
   // Mobile navigation
   // ---------------------------------------------------------------
@@ -13,21 +12,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelector('.nav-links');
 
   if (navToggle && navLinks) {
-
     navToggle.addEventListener('click', () => {
       navLinks.classList.toggle('open');
     });
 
     navLinks.querySelectorAll('a').forEach(link => {
-
       link.addEventListener('click', () => {
         navLinks.classList.remove('open');
       });
-
     });
-
   }
-
 
 
   // ---------------------------------------------------------------
@@ -38,12 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
     '(prefers-reduced-motion: reduce)'
   ).matches;
 
-
   if (!prefersReducedMotion) {
 
     const revealEls =
       document.querySelectorAll('.reveal');
-
 
     const io =
       new IntersectionObserver(
@@ -67,12 +59,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       );
 
-
     revealEls.forEach(el => {
 
       const rect =
         el.getBoundingClientRect();
-
 
       if (rect.top > window.innerHeight * 0.9) {
 
@@ -87,18 +77,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-
   // ---------------------------------------------------------------
   // Project data
   // ---------------------------------------------------------------
 
   const projects = {
 
-
-    // =============================================================
     // PROJECT 1
     // Brachytherapy
-    // =============================================================
 
     p1: {
 
@@ -148,11 +134,8 @@ document.addEventListener('DOMContentLoaded', () => {
     },
 
 
-
-    // =============================================================
     // PROJECT 2
     // SLA Fleet Upgrade
-    // =============================================================
 
     p2: {
 
@@ -171,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
           src: 'assets/images/p2-comparison.jpg',
           fit: 'contain',
-          caption: 'Form 4B (left) and Form 3B (right) prints compared side by side'
+          caption: 'Form 4B and Form 3B prints compared side by side'
         },
 
         {
@@ -202,11 +185,8 @@ document.addEventListener('DOMContentLoaded', () => {
     },
 
 
-
-    // =============================================================
     // PROJECT 3
     // Adaptive Bike Handle
-    // =============================================================
 
     p3: {
 
@@ -250,65 +230,48 @@ document.addEventListener('DOMContentLoaded', () => {
     },
 
 
-
-    // =============================================================
     // PROJECT 4
-    // Blood Coagulation
-    // =============================================================
+    // Modular Pediatric Hearing Aid
 
     p4: {
 
-      tag: 'Undergraduate Research, FSU',
+      tag: 'Senior Design, FSU',
 
-      title: 'Blood Coagulation Modeling with Capillary Strips',
+      title: 'Modular Pediatric Hearing Aid',
 
       images: [
 
         {
-          src: 'assets/images/p4-strips.jpg',
+          src: 'assets/images/p4-hearing-aid.jpg',
           fit: 'contain',
-          caption: 'Capillary strips loaded with blood samples for penetration testing'
-        },
-
-        {
-          src: 'assets/images/p4-holder.png',
-          fit: 'contain',
-          caption: 'SolidWorks model of the strip holder'
-        },
-
-        {
-          src: 'assets/images/p4-strip-cad.png',
-          fit: 'contain',
-          caption: 'SolidWorks model of the capillary strip'
+          caption: 'Pediatric earmold senior design project'
         }
 
       ],
 
       objective:
-        'Test whether blood penetration distance on a capillary strip could reflect changes in coagulation status after heparin treatment and protamine reversal.',
+        'Develop a scalable pediatric earmold system for behind-the-ear hearing aids that can account for anatomical changes as a child grows.',
 
       work:
-        'Developed the capillary-strip testing setup and improved protocol consistency by standardizing sample volume and timing. Measured penetration distance over time and organized the measurements for comparison across conditions.',
+        'Using Materialise Mimics Innovation Suite to convert 3D optical ear scans into engineering models and apply a pediatric growth model to guide an adaptable earmold design. The project also considers FDA 510(k) Class II medical device requirements and ISO 10993 biocompatibility requirements.',
 
       outcome:
-        'The project produced preliminary measurements, but there was not enough evidence to conclude that penetration distance consistently tracked coagulation status.',
+        'The project is ongoing, with current work focused on developing the digital modeling workflow and translating pediatric ear anatomy into a scalable design for prototyping.',
 
       tools: [
-        'SolidWorks',
-        'Prusa CORE One',
-        'FDM 3D printing',
-        'Experimental testing',
-        'Image analysis'
+        'Materialise Mimics Innovation Suite',
+        '3-matic',
+        '3D optical scanning',
+        '3D printing',
+        'FDA 510(k)',
+        'ISO 10993'
       ]
 
     },
 
 
-
-    // =============================================================
     // PROJECT 5
     // Arterial + Venous Segmentation
-    // =============================================================
 
     p5: {
 
@@ -321,7 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
           src: 'assets/images/p5-segmentation.png',
           fit: 'contain',
-          caption: 'Segmented arterial (red) and venous (blue) anatomy'
+          caption: 'Segmented arterial and venous anatomy'
         },
 
         {
@@ -353,11 +316,8 @@ document.addEventListener('DOMContentLoaded', () => {
     },
 
 
-
-    // =============================================================
     // PROJECT 6
     // Pacemaker
-    // =============================================================
 
     p6: {
 
@@ -366,12 +326,6 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Pacemaker Bioinstrumentation System',
 
       images: [
-
-        /*
-          IMPORTANT:
-          Main project card uses p6-breadboard.jpg,
-          so the popup opens with the same image.
-        */
 
         {
           src: 'assets/images/p6-breadboard.jpg',
@@ -414,17 +368,15 @@ document.addEventListener('DOMContentLoaded', () => {
     },
 
 
-
-    // =============================================================
     // PROJECT 7
     // Amyloid Beta
-    // =============================================================
 
     p7: {
 
       tag: 'Biotransport Class',
 
-      title: 'Transport of Amyloid-β Aggregates Through Brain Interstitial Fluid',
+      title:
+        'Transport of Amyloid-β Aggregates Through Brain Interstitial Fluid',
 
       images: [
 
@@ -467,81 +419,62 @@ document.addEventListener('DOMContentLoaded', () => {
     },
 
 
-
-    // =============================================================
     // PROJECT 8
-    // Spiral Arteries
-    // =============================================================
+    // Honors in the Major — Spiral Artery Blood Flow
 
     p8: {
 
-      tag: 'Undergraduate Research, FSU',
+      tag: 'Honors in the Major, FSU',
 
-      title: 'Spiral Arteries Orchestrating Menstrual Flow',
+      title: 'Spiral Artery Blood Flow Modeling',
 
       images: [
-
-        /*
-          Main card uses p8-poster.jpg,
-          so the popup starts with the poster too.
-        */
 
         {
           src: 'assets/images/p8-poster.jpg',
           fit: 'contain',
-          caption: 'Presenting the research at the Florida Undergraduate Research Conference'
-        },
-
-        {
-          src: 'assets/images/p8-schematic.png',
-          fit: 'contain',
-          caption: 'Uterine arterial system schematic and electrical-circuit analogy used for the resistance model'
+          caption:
+            'Spiral artery research presented at the Florida Undergraduate Research Conference'
         },
 
         {
           src: 'assets/images/p8-geometry.png',
           fit: 'contain',
-          caption: 'Parameterized spiral geometry and generated helix coordinates from the Python model'
-        },
-
-        {
-          src: 'assets/images/p8-channel.png',
-          fit: 'contain',
-          caption: 'CAD concept for a microfluidic test channel'
+          caption:
+            'Parameterized spiral artery geometry generated in Python'
         }
 
       ],
 
       objective:
-        'Model how spiral artery geometry affects menstrual blood flow and test whether uterine contraction and vasoconstriction alone could reduce flow enough to control bleeding.',
+        'Investigate how uterine spiral artery geometry influences red blood cell distribution and local hemodynamics.',
 
       work:
-        'Built a parameterized 2D spiral artery model and varied vessel diameter, coil pitch, and artery length. Used the Hagen–Poiseuille and Darcy–Weisbach equations to calculate flow resistance, then used Python to compare the results across conditions.',
+        'I generate spiral artery geometries in Python and prepare them for simulation in OpenFOAM using a modified suspension-balance blood-flow model. My current work focuses on adapting the model to curved periodic vessels and resolving flow instability before comparing different geometries.',
 
       outcome:
-        'The model suggested that contraction and vasoconstriction alone may not reduce flow enough to control bleeding. Presented the project at the Florida Undergraduate Research Conference.',
+        'A spiral vessel mesh has been developed that passes OpenFOAM mesh checks and can run with the customized solver without external flow forcing. The next phase will compare red blood cell distribution and hemodynamic behavior across vessel geometries.',
 
       tools: [
         'Python',
-        'CAD modeling',
-        'Hagen–Poiseuille equation',
-        'Darcy–Weisbach equation'
+        'OpenFOAM',
+        'Gmsh',
+        'Computational fluid dynamics',
+        'Suspension-balance modeling'
       ]
 
     },
 
 
-
-    // =============================================================
     // PROJECT 9
     // High Plank
-    // =============================================================
 
     p9: {
 
       tag: 'Biomechanics Class',
 
-      title: 'Hand Placement and Joint Loading During a Static High Plank',
+      title:
+        'Hand Placement and Joint Loading During a Static High Plank',
 
       images: [
 
@@ -579,11 +512,8 @@ document.addEventListener('DOMContentLoaded', () => {
     },
 
 
-
-    // =============================================================
     // PROJECT 10
     // Knee Model
-    // =============================================================
 
     p10: {
 
@@ -593,21 +523,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
       images: [
 
-        /*
-          Main card uses p10-model.png,
-          so popup now begins with the model.
-        */
-
         {
           src: 'assets/images/p10-model.png',
           fit: 'contain',
-          caption: 'Completed model with the ACL (blue) and PCL (green) reconstructed'
+          caption:
+            'Completed model with the ACL and PCL reconstructed'
         },
 
         {
           src: 'assets/images/p10-segmentation.jpg',
           fit: 'contain',
-          caption: 'Segmenting the femur, tibia, and fibula in 3D Slicer'
+          caption:
+            'Segmenting the femur, tibia, and fibula in 3D Slicer'
         }
 
       ],
@@ -633,7 +560,6 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
 
-
   // ---------------------------------------------------------------
   // Modal + gallery
   // ---------------------------------------------------------------
@@ -656,7 +582,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const galleryNext =
     document.getElementById('gallery-next');
 
-
   const modalTag =
     document.getElementById('modal-tag');
 
@@ -675,11 +600,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalTools =
     document.getElementById('modal-tools');
 
-
   let currentImages = [];
 
   let currentIndex = 0;
-
 
 
   function renderImage() {
@@ -687,13 +610,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const img =
       currentImages[currentIndex];
 
-
     galleryMain.src =
       img.src;
 
     galleryMain.alt =
       img.caption || '';
-
 
     galleryMain.style.objectFit =
       'contain';
@@ -701,18 +622,15 @@ document.addEventListener('DOMContentLoaded', () => {
     galleryMain.style.objectPosition =
       'center';
 
-
     galleryMain.classList.add(
       'is-contain'
     );
-
 
     galleryCaption.textContent =
       img.caption || '';
 
     galleryCaption.hidden =
       !img.caption;
-
 
     galleryThumbs
       .querySelectorAll('.thumb')
@@ -729,7 +647,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const multipleImages =
       currentImages.length > 1;
 
-
     galleryPrev.hidden =
       !multipleImages;
 
@@ -742,30 +659,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-
   function openModal(id) {
 
     const project =
       projects[id];
 
-
     if (!project) {
       return;
     }
 
-
     currentImages =
       project.images;
 
-
-    /*
-      Always start the gallery on image 0.
-      Image 0 is now intentionally the
-      same image shown on the card.
-    */
-
     currentIndex = 0;
-
 
     modalTag.textContent =
       project.tag;
@@ -782,7 +688,6 @@ document.addEventListener('DOMContentLoaded', () => {
     modalOutcome.textContent =
       project.outcome;
 
-
     modalTools.innerHTML =
       '';
 
@@ -792,21 +697,17 @@ document.addEventListener('DOMContentLoaded', () => {
       const pill =
         document.createElement('span');
 
-
       pill.className =
         'tool-pill';
 
-
       pill.textContent =
         tool;
-
 
       modalTools.appendChild(
         pill
       );
 
     });
-
 
 
     galleryThumbs.innerHTML =
@@ -816,49 +717,38 @@ document.addEventListener('DOMContentLoaded', () => {
     project.images.forEach(
       (image, index) => {
 
-
         const button =
           document.createElement('button');
-
 
         button.className =
           'thumb';
 
-
         button.type =
           'button';
-
 
         button.setAttribute(
           'aria-label',
           `Show image ${index + 1}`
         );
 
-
         const thumbnail =
           document.createElement('img');
-
 
         thumbnail.src =
           image.src;
 
-
         thumbnail.alt =
           '';
-
 
         thumbnail.style.objectFit =
           'contain';
 
-
         thumbnail.style.objectPosition =
           'center';
-
 
         button.appendChild(
           thumbnail
         );
-
 
         button.addEventListener(
           'click',
@@ -867,12 +757,10 @@ document.addEventListener('DOMContentLoaded', () => {
             currentIndex =
               index;
 
-
             renderImage();
 
           }
         );
-
 
         galleryThumbs.appendChild(
           button
@@ -884,17 +772,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderImage();
 
-
     overlay.classList.add(
       'open'
     );
-
 
     document.body.style.overflow =
       'hidden';
 
   }
-
 
 
   function closeModal() {
@@ -903,12 +788,10 @@ document.addEventListener('DOMContentLoaded', () => {
       'open'
     );
 
-
     document.body.style.overflow =
       '';
 
   }
-
 
 
   function step(delta) {
@@ -916,7 +799,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentImages.length < 2) {
       return;
     }
-
 
     currentIndex =
       (
@@ -926,15 +808,13 @@ document.addEventListener('DOMContentLoaded', () => {
       )
       % currentImages.length;
 
-
     renderImage();
 
   }
 
 
-
   // ---------------------------------------------------------------
-  // Connect each card to its matching project
+  // Connect each card to project
   // ---------------------------------------------------------------
 
   document
@@ -943,15 +823,12 @@ document.addEventListener('DOMContentLoaded', () => {
     )
     .forEach(card => {
 
-
       card.addEventListener(
         'click',
         () => {
 
-
           const projectId =
             card.dataset.project;
-
 
           openModal(
             projectId
@@ -960,9 +837,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       );
 
-
     });
-
 
 
   document
@@ -971,7 +846,6 @@ document.addEventListener('DOMContentLoaded', () => {
       'click',
       closeModal
     );
-
 
 
   overlay.addEventListener(
@@ -986,7 +860,6 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
 
-
   galleryPrev.addEventListener(
     'click',
     () => step(-1)
@@ -999,11 +872,9 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
 
-
   document.addEventListener(
     'keydown',
     event => {
-
 
       if (
         !overlay.classList.contains('open')
@@ -1011,25 +882,20 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-
       if (event.key === 'Escape') {
         closeModal();
       }
-
 
       if (event.key === 'ArrowLeft') {
         step(-1);
       }
 
-
       if (event.key === 'ArrowRight') {
         step(1);
       }
 
-
     }
   );
-
 
 
   // ---------------------------------------------------------------
@@ -1041,21 +907,17 @@ document.addEventListener('DOMContentLoaded', () => {
       '.filter-btn'
     );
 
-
   const cards =
     document.querySelectorAll(
       '.project-grid .card'
     );
 
 
-
   filterBtns.forEach(button => {
-
 
     button.addEventListener(
       'click',
       () => {
-
 
         filterBtns.forEach(btn => {
 
@@ -1065,22 +927,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         });
 
-
         button.classList.add(
           'active'
         );
 
-
         const filter =
           button.dataset.filter;
 
-
         cards.forEach(card => {
-
 
           const category =
             card.dataset.category;
-
 
           if (
             filter === 'all'
@@ -1090,24 +947,18 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.display =
               '';
 
-          }
-
-          else {
+          } else {
 
             card.style.display =
               'none';
 
           }
 
-
         });
-
 
       }
     );
 
-
   });
-
 
 });
